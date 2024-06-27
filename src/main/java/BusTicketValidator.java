@@ -8,23 +8,16 @@ import java.util.List;
 
 public class BusTicketValidator {
     public static void main(String[] args) {
-        List<BusTicket> tickets = readTicketsFromFile("D:\\Java\\BusTicket\\tickets.txt");
-        Validator validator = new Validator();
-        int totalTickets = tickets.size();
-        int validTickets = 0;
-
-        for (BusTicket ticket : tickets) {
-            List<String> violations = validator.validate(ticket);
-            if (violations.isEmpty()) {
-                validTickets++;
-            } else {
-                System.out.println("Ticket violated rules: " + violations);
-            }
-        }
-
-        System.out.println("Total = " + totalTickets);
-        System.out.println("Valid = " + validTickets);
-        System.out.println("Most popular violation = " + validator.getMostPopularViolation());
+        BusTicketService ticketService = new BusTicketService();
+        BusTicket ticket1 = ticketService.createTicket("Economy", "DAY", "2024-06-20", 100);
+        BusTicket ticket2 = ticketService.createTicket("Economy", "WEEK", "2024-06-21", 200);
+        BusTicket ticket3 = ticketService.createTicket("Business", "MONTH", "2024-06-22", 300);
+        BusTicket fetchedTicket = ticketService.getTicketById(1);
+        System.out.println("Fetched Ticket: " + fetchedTicket.ticketType + " " + fetchedTicket.price);
+        List<BusTicket> searchedTickets = ticketService.searchTickets("DAY", 50, 150);
+        System.out.println("Searched Tickets: " + searchedTickets.size());
+        boolean isRemoved = ticketService.removeTicket(2);
+        System.out.println("Ticket 2 removed: " + isRemoved);
     }
 
     public static List<BusTicket> readTicketsFromFile(String filePath) {
