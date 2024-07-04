@@ -1,40 +1,23 @@
+import org.springframework.stereotype.Repository;
+
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Properties;
 import java.io.InputStream;
 import java.io.IOException;
 
+@Repository
 public class TicketServiceDAO {
-    private Connection connection;
+    private final DataSource dataSource;
 
-    public TicketServiceDAO() {
-        try {
-            Properties properties = new Properties();
-            InputStream input = getClass().getClassLoader().getResourceAsStream("db.properties");
-            properties.load(input);
-
-            String url = properties.getProperty("db.url");
-            String username = properties.getProperty("db.username");
-            String password = properties.getProperty("db.password");
-
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void close() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public TicketServiceDAO(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public void saveUser(String name) throws SQLException {
         String sql = "INSERT INTO public.user (name) VALUES (?)";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, name);
             pstmt.executeUpdate();
         }
@@ -45,7 +28,8 @@ public class TicketServiceDAO {
             throw new IllegalArgumentException("Invalid ticket type: " + ticketType);
         }
         String sql = "INSERT INTO public.ticket (user_id, ticket_type) VALUES (?, ?::ticket_type)";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
             pstmt.setString(2, ticketType);
             pstmt.executeUpdate();
@@ -58,7 +42,8 @@ public class TicketServiceDAO {
 
     public void fetchTicketById(int id) throws SQLException {
         String sql = "SELECT * FROM public.ticket WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -72,7 +57,8 @@ public class TicketServiceDAO {
 
     public void fetchTicketsByUserId(int userId) throws SQLException {
         String sql = "SELECT * FROM public.ticket WHERE user_id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -86,7 +72,8 @@ public class TicketServiceDAO {
 
     public void fetchUserById(int id) throws SQLException {
         String sql = "SELECT * FROM public.user WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -99,7 +86,8 @@ public class TicketServiceDAO {
 
     public void updateTicketType(int id, String ticketType) throws SQLException {
         String sql = "UPDATE public.ticket SET ticket_type = ?::ticket_type WHERE id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, ticketType);
             pstmt.setInt(2, id);
             pstmt.executeUpdate();
@@ -109,7 +97,8 @@ public class TicketServiceDAO {
     public void deleteUserById(int id) throws SQLException {
         String sqlDeleteTickets = "DELETE FROM public.ticket WHERE user_id = ?";
         String sqlDeleteUser = "DELETE FROM public.user WHERE id = ?";
-        try (PreparedStatement pstmtTickets = connection.prepareStatement(sqlDeleteTickets);
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmtTickets = connection.prepareStatement(sqlDeleteTickets);
              PreparedStatement pstmtUser = connection.prepareStatement(sqlDeleteUser)) {
             pstmtTickets.setInt(1, id);
             pstmtTickets.executeUpdate();
@@ -120,6 +109,7 @@ public class TicketServiceDAO {
 
     public void updateUserAndTicketWithSavepoint(int userId, String newUserName, int ticketId, String newTicketType) throws SQLException {
         Savepoint savepoint = null;
+        Connection connection = dataSource.getConnection();
         try {
             connection.setAutoCommit(false);
             savepoint = connection.setSavepoint("Savepoint1");
