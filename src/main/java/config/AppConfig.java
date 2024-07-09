@@ -42,7 +42,7 @@ public class AppConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/my_ticket_service_db");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("fyfnjkbqnjg2012!");
+        dataSource.setPassword("password!");
 
         return dataSource;
     }
