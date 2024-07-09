@@ -1,10 +1,9 @@
 package entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "\"user\"")
@@ -19,6 +18,9 @@ public class User {
 
     @Column(name = "creation_date")
     private Timestamp creationDate;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Ticket> tickets;
 
     public User() {
     }
@@ -56,5 +58,13 @@ public class User {
 
     public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }
