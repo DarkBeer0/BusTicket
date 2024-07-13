@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BusTicket:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c478626-302c-4628-9a95-f438c0cae5a3" name="Changes" comment="del idea">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/MyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/UserCommandLineRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/TicketRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TicketDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/BusTicketValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BusTicketValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="JFB-4" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="2hsEjrIdc40aE4ZKDLxNTpQlKWn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
+    "git-widget-placeholder": "HW-12",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Java/BusTicket",
+    "onboarding.tips.debug.path": "D:/Java/BusTicket/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.BusTicketValidator">
+    <configuration name="BusTicketValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.BusTicketValidator" />
+      <module name="BusTicket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="BusTicket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BusTicketValidator" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BusTicketValidator" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BusTicketValidator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c478626-302c-4628-9a95-f438c0cae5a3" name="Changes" comment="" />
+      <created>1718374524522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718374524522</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Init">
+      <option name="closed" value="true" />
+      <created>1718378468246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718378468246</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implement BusTicketService and search capabilities">
+      <option name="closed" value="true" />
+      <created>1718911279653</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718911279653</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Jar build">
+      <option name="closed" value="true" />
+      <created>1719213610856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719213610856</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bd func">
+      <option name="closed" value="true" />
+      <created>1719512366230</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719512366230</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Bd func">
+      <option name="closed" value="true" />
+      <created>1719512450556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719512450556</updated>
+    </task>
+    <task id="LOCAL-00006" summary="hw 9">
+      <option name="closed" value="true" />
+      <created>1720022044607</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720022044607</updated>
+    </task>
+    <task id="LOCAL-00007" summary="hw 9">
+      <option name="closed" value="true" />
+      <created>1720022056829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720022056829</updated>
+    </task>
+    <task id="LOCAL-00008" summary="hw 9">
+      <option name="closed" value="true" />
+      <created>1720108282337</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720108282337</updated>
+    </task>
+    <task id="LOCAL-00009" summary="hard hw">
+      <option name="closed" value="true" />
+      <created>1720510895840</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720510895840</updated>
+    </task>
+    <task id="LOCAL-00010" summary="hard hw">
+      <option name="closed" value="true" />
+      <created>1720510933012</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720510933012</updated>
+    </task>
+    <task id="LOCAL-00011" summary="hard hw">
+      <option name="closed" value="true" />
+      <created>1720510946712</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720510946712</updated>
+    </task>
+    <task id="LOCAL-00012" summary="pas!">
+      <option name="closed" value="true" />
+      <created>1720511289126</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720511289126</updated>
+    </task>
+    <task id="LOCAL-00013" summary="del idea">
+      <option name="closed" value="true" />
+      <created>1720866067228</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720866067228</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <MESSAGE value="Implement BusTicketService and search capabilities" />
+    <MESSAGE value="Jar build" />
+    <MESSAGE value="Bd func" />
+    <MESSAGE value="hw 9" />
+    <MESSAGE value="hard hw" />
+    <MESSAGE value="pas!" />
+    <MESSAGE value="del idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="del idea" />
+  </component>
+</project>
