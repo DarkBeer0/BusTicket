@@ -22,7 +22,12 @@ public class TicketService {
 
     @PostConstruct
     public void init() throws IOException {
-        tickets = loadTicketsFromFile();
+        try {
+            tickets = loadTicketsFromFile();
+            System.out.println("Tickets loaded successfully " + tickets.size());
+        } catch (IOException e) {
+            System.out.println("Failed to load tickets from file");
+        }
     }
 
     public List<Ticket> loadTicketsFromFile() throws IOException {
