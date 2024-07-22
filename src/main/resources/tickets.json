@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "userId": 151,
+    "ticketType": "VIP",
+    "creationDate": "2024-07-08T21:29:43.415"
+  },
+  {
+    "id": 2,
+    "userId": 151,
+    "ticketType": "VIP",
+    "creationDate": "2024-07-08T21:34:29.011"
+  }
+]
