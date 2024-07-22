@@ -1,7 +1,6 @@
 package entity;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -9,6 +8,7 @@ import java.sql.Timestamp;
 public class Ticket {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
